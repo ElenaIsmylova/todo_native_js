@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="add-or-change-todo-modal__wrapper" class="modal-window__wrapper">
+    <div id="add-or-change-todo-modal" class="modal-window__window">
+      <div id="modal-window__title" class="modal-window__title"></div>
+      <input id="input-note" class="input input-note" placeholder="Input your note...">
+      <div class="btns-wrapper">
+        <button id="cancel-btn" class="modal-btn cancel-btn">CANCEL</button>
+        <button id="apply-btn" class="modal-btn apply-btn">APPLY</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="delete-todos-modal-wrapper" class="modal-window__wrapper">
+    <div id="delete-note-modal" class="modal-window__window">
+      <div class="question">Вы действительно хотите удалить все дела?</div>
+      <div class="btns-wrapper">
+        <button id="close-btn" class="modal-btn cancel-btn">CANCEL</button>
+        <button id="agree-btn" class="modal-btn apply-btn">AGREE</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 id="title" class="title">TODO LIST</h1>
+
+    <div class="input-wrapper">
+      <input id="input-search" class="input input-search" placeholder="Search note...">
+      <select id="todos" name="todos" class="select">
+        <option value="all">ALL</option>
+        <option value="completed">COMPLETED</option>
+        <option value="uncompleted">UNCOMPLETED</option>
+      </select>
+      <button id="theme-btn" class="theme-btn light-theme-btn"></button>
+    </div>
+    <div class="toggle-switch">
+      <input type="checkbox" id="switch" class="toggle-input">
+      <label for="switch" class="toggle-label"></label>
+    </div>
+    <div id="todos-wrapper" class="todos-wrapper todos-wrapper-empty"></div>
+
+    <div id="add-todo-btn" class="add-todo-btn"></div>
+  </div>
+  <script src="index.js" type="module"></script>
+</body>
+</html>
