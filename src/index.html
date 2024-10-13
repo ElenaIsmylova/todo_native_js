@@ -8,13 +8,24 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="modal-window__wrapper" class="modal-window__wrapper">
-    <div id="modal-window__window" class="modal-window__window">
-      <div id="modal-window__title" class="modal-window__title">NEW NOTE</div>
+  <div id="add-or-change-todo-modal__wrapper" class="modal-window__wrapper">
+    <div id="add-or-change-todo-modal" class="modal-window__window">
+      <div id="modal-window__title" class="modal-window__title"></div>
       <input id="input-note" class="input input-note" placeholder="Input your note...">
       <div class="btns-wrapper">
         <button id="cancel-btn" class="modal-btn cancel-btn">CANCEL</button>
         <button id="apply-btn" class="modal-btn apply-btn">APPLY</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="delete-todos-modal-wrapper" class="modal-window__wrapper">
+    <div id="delete-note-modal" class="modal-window__window">
+      <div class="question">Вы действительно хотите удалить все дела?</div>
+      <div class="btns-wrapper">
+        <button id="close-btn" class="modal-btn cancel-btn">CANCEL</button>
+        <button id="agree-btn" class="modal-btn apply-btn">AGREE</button>
       </div>
     </div>
   </div>
@@ -31,8 +42,11 @@
       </select>
       <button id="theme-btn" class="theme-btn light-theme-btn"></button>
     </div>
-
-    <div id="todos-wrapper" class="todos-wrapper"></div>
+    <div class="toggle-switch">
+      <input type="checkbox" id="switch" class="toggle-input">
+      <label for="switch" class="toggle-label"></label>
+    </div>
+    <div id="todos-wrapper" class="todos-wrapper todos-wrapper-empty"></div>
 
     <div id="add-todo-btn" class="add-todo-btn"></div>
   </div>

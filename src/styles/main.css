@@ -43,14 +43,14 @@ html, body {
   padding: 0px 10px;
   border: 1px solid #6C63FF;
   border-radius: 5px;
-  background-image: url('../images/searchLightThemeIcon.svg');
-  background-repeat: no-repeat;
-  background-position: 97% center;
   transition: 0.2s;
 }
 
 .input-search {
   width: 595px;
+  background-image: url('../images/searchLightThemeIcon.svg');
+  background-repeat: no-repeat;
+  background-position: 97% center;
 }
 
 .input:focus {
@@ -61,14 +61,20 @@ html, body {
 
 .dark-theme-input {
   border: 1px solid #F7F7F7;
-  background-image: url('../images/searchDarkThemeIcon.svg');
+  color:#F7F7F7;
   background-color: #252525;
+}
+
+.dark-theme-input-search {
+  background-image: url('../images/searchDarkThemeIcon.svg');
 }
 
 .dark-theme-input:focus {
   border: 1px solid #F7F7F7;
   outline: none;
   box-shadow: 0 0 5px #F7F7F7;
+  color:#F7F7F7;
+  background-color: #252525;
 }
 
 .input::placeholder {
@@ -106,7 +112,6 @@ html, body {
   border: none;
   border-radius: 5px;
   background-color: #6C63FF;
-  
   background-repeat: no-repeat;
   background-position: center center;
   transition: 0.2s;
@@ -123,6 +128,45 @@ html, body {
 
 .theme-btn:hover {
   background-color: #5850DD;
+}
+
+.toggle-switch {
+  position: relative;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-label:before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-input:checked + .toggle-label {
+  background-color: #6C63FF;
+}
+
+.toggle-input:checked + .toggle-label:before {
+  transform: translateX(30px);
 }
 
 .todos-wrapper {
@@ -157,6 +201,43 @@ html, body {
   background-color: #6C63FF;
 }
 
+.checkbox-wrapper input {
+  display: none;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkbox-wrapper .checkmark {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #6C63FF;
+  border-radius: 2px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.checkbox-wrapper input:checked + .checkmark {
+  background-color: #6C63FF;
+  border-color: #6C63FF;
+}
+
+.checkbox-wrapper input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0px;
+  width: 7px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
 .todo {
   width: 420px;
   font-size: 18px;
@@ -172,15 +253,24 @@ html, body {
   height: 18px;
   background-position: center center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .edit {
-  margin-right: 5px;
+  margin-right: 10px;
   background-image: url('../images/editIcon.svg');
+}
+
+.edit:hover {
+  background-image: url('../images/editIconHover.svg');
 }
 
 .delete {
   background-image: url('../images/deleteIcon.svg');
+}
+
+.delete:hover {
+  background-image: url('../images/deleteIconHover.svg');
 }
 
 .add-todo-btn {
@@ -298,4 +388,21 @@ html, body {
 
 .apply-btn:hover {
   background-color: #5850DD;
+}
+
+.is-invisible {
+  display: none;
+}
+
+.is-done {
+  color: #808080;
+  text-decoration: line-through;
+}
+
+.question {
+  margin-top: 50px;
+  margin-bottom: 90px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
 }
